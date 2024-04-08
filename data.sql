@@ -3,35 +3,60 @@
 
 -- Create Students table
 CREATE TABLE Student (
-    id INT PRIMARY KEY AUTO_INCREMENT, full_name VARCHAR(255) NULL, date_of_birth DATE NULL, gender ENUM('Male', 'Female'), address VARCHAR(255), school_id INT, FOREIGN KEY (school_id) REFERENCES Schools (school_id) -- Added comma here
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(255) NULL, 
+    date_of_birth DATE NULL,
+    gender ENUM('Male', 'Female'), 
+    address VARCHAR(255), 
+    school_id INT, 
+    FOREIGN KEY (school_id) REFERENCES Schools (school_id) -- Added comma here
 );
 
 -- Create Schools table
 CREATE TABLE Schools (
-    school_id INT PRIMARY KEY, school_name VARCHAR(100), location VARCHAR(255)
+    school_id INT PRIMARY KEY, 
+    school_name VARCHAR(100), 
+    location VARCHAR(255)
 );
 
 -- Create Subjects table
 CREATE TABLE Subjects (
-    subject_id INT PRIMARY KEY, subject_name VARCHAR(100)
+    subject_id INT PRIMARY KEY,
+    subject_name VARCHAR(100)
 );
 
 -- Create Exams table
 CREATE TABLE Exams (
-    exam_id INT PRIMARY KEY, exam_name VARCHAR(100), exam_date DATE, subject_id INT, duration TIME, total_marks INT, FOREIGN KEY (subject_id) REFERENCES Subjects (subject_id)
+    exam_id INT PRIMARY KEY,
+    exam_name VARCHAR(100),
+    exam_date DATE,
+    subject_id INT, 
+    duration TIME, 
+    total_marks INT, 
+    FOREIGN KEY (subject_id) REFERENCES Subjects (subject_id)
 );
 -- Create ExamResults table
 CREATE TABLE ExamResults (
-    result_id INT PRIMARY KEY, student_id INT, exam_id INT, marks_obtained INT, FOREIGN KEY (student_id) REFERENCES Students (id), FOREIGN KEY (exam_id) REFERENCES Exams (exam_id)
+    result_id INT PRIMARY KEY, 
+    student_id INT, 
+    exam_id INT, 
+    marks_obtained INT,
+    FOREIGN KEY (student_id) REFERENCES Students (id),
+    FOREIGN KEY (exam_id) REFERENCES Exams (exam_id)
 );
 
 -- Create Teachers table
 CREATE TABLE Teachers (
-    teacher_id INT PRIMARY KEY, teacher_name VARCHAR(100), subject_id INT, FOREIGN KEY (subject_id) REFERENCES Subjects (subject_id)
+    teacher_id INT PRIMARY KEY, 
+    teacher_name VARCHAR(100), 
+    subject_id INT,
+    FOREIGN KEY (subject_id) REFERENCES Subjects (subject_id)
 );
 -- Create Administrators table
 CREATE TABLE Administrators (
-    admin_id INT PRIMARY KEY, admin_name VARCHAR(100), role VARCHAR(100)
+    admin_id INT PRIMARY KEY,
+    admin_name VARCHAR(100),
+    role VARCHAR(100)
 );
 
 -- Inserting data into Schools table
@@ -131,6 +156,7 @@ FROM Exams e
 
 
 --GROUP3 NAMES
+
 /*Takyi Hubert: 052241360040
 Owusu Benjamin Pinamang: 052241360137
 Pavarotti Owusu Antwi: 052241360140
