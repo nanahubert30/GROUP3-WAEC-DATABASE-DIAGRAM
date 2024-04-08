@@ -171,5 +171,7 @@ Opoku Tutu Pascal: 052241360108
 Nehemiah Kwame Afriyie Frimpong: 052241360141
 Offei-Ntow Emmanuel: 052241360115
 Adzaby Solomon Atsu: 052341360028
-Charles Nana osei: 052241360134*/
+Charles Nana osei: 052241360134
+Ibrahim Abdul-Rahim: 052241360146
+Yakubu Zaidan: 052241360138*/
 
